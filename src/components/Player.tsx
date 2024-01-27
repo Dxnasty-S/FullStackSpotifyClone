@@ -1,7 +1,6 @@
-﻿import { View, Text, StyleSheet, Image } from 'react-native'
-import { tracks } from '../../assets/data/tracks'
+﻿import { View, Text, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
+import { tracks } from '../../assets/data/tracks';
 const track = tracks[0];
 
 const Player = () => {
@@ -13,7 +12,7 @@ const Player = () => {
 
   return (
     <View style={styles.container}>
-      <view style={styles.player}>
+      <View style={styles.player}>
         {image && <Image source={{ uri: image.url }} style={styles.image} />}
 
         <View style={{ flex: 1 }}>
@@ -25,27 +24,26 @@ const Player = () => {
           name={'heart-outline'}
           size={20}
           color={'white'}
-          style={{ marginHorizontal: 20 }}
+          style={{ marginHorizontal: 10 }}
         />
         <Ionicons
           disabled={!track?.preview_url}
           name={'play'}
-          size={20}
+          size={22}
           color={track?.preview_url ? 'white' : 'gray'}
         />
-
-      </view>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    //position: 'absolute',
-    //top: -75,
+    position: 'absolute',
     width: '100%',
-    padding: 10,
+    top: -75,
     height: 75,
+    padding: 10,
   },
   player: {
     backgroundColor: '#286660',
@@ -61,6 +59,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     color: 'lightgray',
+    fontSize: 12,
   },
   image: {
     height: '100%',
